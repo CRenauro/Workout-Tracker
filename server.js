@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const path = require("path");
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -10,14 +11,24 @@ app.use(express.urlencoded({ extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //bring in mongoose.connect
+mongoose.connect(process.env.MONGOOSE_URI || "mongodb://localhost/fitness", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindandModify: false,
+});
 
 //declare routes
+const api = require('./routes/api');
+const html = require('./routes/html');
 
 //declare api routes
+api.use(api);
+api.use(html);
+
 
 app.listen(PORT, () => {
     console.log(`My app is runnning on ${PORT}`);
 });
 
 
-mongodb+srv://mongo:mongo@cluster0.tn9ax.mongodb.net/fitness?retryWrites=true&w=majority
