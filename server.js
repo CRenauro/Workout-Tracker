@@ -26,8 +26,8 @@ const api = require('./routes/api');
 const html = require('./routes/html');
 
 // declare api routes
-api.use(api)
-api.use(html)
+api.use(api);
+api.use(html);
 
 
 app.listen(PORT, () => {
