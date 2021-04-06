@@ -1,4 +1,4 @@
-const {pathToFileURL} = require("url");
+// const {pathToFileURL} = require("url");
 const path = require("path");
 
 const router = require("express").Router();
@@ -13,7 +13,7 @@ router.get("/stats", (req,res) => {
 
 router.get("/", (req,res) => {
     console.log("GET /")
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
 module.exports = router;

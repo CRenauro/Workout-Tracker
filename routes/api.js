@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout");
+const mongoose = require("mongoose");
+const express = require("express");
 
 
 router.post("/api/workouts", ({ body }, res) => {
@@ -67,4 +69,3 @@ router.delete("/api/workouts", ({ body }, res) => {
 });
 
 module.exports = router;
-  ///aggregate for duration and range (look up .aggregate for mongoose)

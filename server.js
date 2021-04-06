@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const logger = require("morgan");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.use(logger("dev"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true}));
@@ -23,8 +26,8 @@ const api = require('./routes/api');
 const html = require('./routes/html');
 
 //declare api routes
-api.use(api);
-api.use(html);
+// api.use(api);
+// api.use(html);
 
 
 app.listen(PORT, () => {
