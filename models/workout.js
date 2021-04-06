@@ -23,8 +23,18 @@ const workoutSchema = new Schema({
             required: "Enter the duration",
         },
         weight: {
-            type: Number,
+            type: Number
         },
+        reps: {
+            type: Number
+        },
+        sets: {
+            type: Number
+        },
+        distance: {
+            type: Number
+        }
+        
     },
 ],
 });
