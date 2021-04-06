@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 
 
-router.post("/api/workouts", ({ body }, res) => {
+router.post("/api/workout", ({ body }, res) => {
     Workout.create({})
       .then(dbWorkout => {
         res.json(dbWorkout);
@@ -14,7 +14,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
 });
 
-router.put("/api/workouts/:id", (req, res) => {
+router.put("/api/workout/:id", (req, res) => {
   Workout.findByIdAndUpdate(
     {
       id: req.params.id
@@ -34,7 +34,7 @@ router.put("/api/workouts/:id", (req, res) => {
   });
 });
 
-router.get("/api/workouts", (req, res) => {
+router.get("/api/workout", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
     .then((dbWorkout) => {
@@ -46,7 +46,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-router.get("/api/workouts/range", (req, res) => {
+router.get("/api/workout/range", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
     .then((dbWorkout) => {
@@ -58,7 +58,7 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
-router.delete("/api/workouts", ({ body }, res) => {
+router.delete("/api/workout", ({ body }, res) => {
     Workout.findByIdAndDelete(body.id)
     .then(()=> {
         return res.json(true);
