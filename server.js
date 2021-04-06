@@ -25,9 +25,9 @@ mongoose.connect(process.env.MONGOOSE_URI || "mongodb://localhost/fitness", {
 const api = require('./routes/api');
 const html = require('./routes/html');
 
-//declare api routes
-// api.use(api);
-// api.use(html);
+// declare api routes
+api.use(api)
+api.use(html)
 
 
 app.listen(PORT, () => {
