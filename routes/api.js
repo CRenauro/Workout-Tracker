@@ -46,6 +46,9 @@ router.get("/api/workout", (req, res) => {
     });
 });
 
+// dbWorkout.exercises.forEach()
+// res.json({...dbWorkout, totalDuration});
+
 router.get("/api/workout/range", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
