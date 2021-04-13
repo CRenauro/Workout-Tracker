@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //bring in mongoose.connect
-mongoose.connect(process.env.MONGOOSE_URI || "mongodb://localhost/fitness", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
