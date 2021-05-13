@@ -1,16 +1,26 @@
-# Workout-Tracker
+<h1 align="center">Workout Tracker 🏋️</h1>
 
-An app to create and track daily workouts. User is able to log mulitple exercises in a workout on a given day.
+### 🏠 https://workout-tracker-cr.herokuapp.com/
 
-![external](https://user-images.githubusercontent.com/71401585/113930368-30e82500-97bf-11eb-9a80-dfd9d2881892.png)
+<br/>
 
-![internal](https://user-images.githubusercontent.com/71401585/113929621-4741b100-97be-11eb-89bb-45a1aed29179.png)
+# Install
+
+Open the above link in your browser.
+<br/>
+<br/>
+
+# Usage
+
+![opener](./assets/opener.png)
+![dashboard](./assets/dashboard.png)
+<br/>
+<br/>
+<br/>
+
+User can create and track daily workouts. Multiple exercises can be logged for a workout on a given day. The app tracks the name,
+type, weigght, sets, reps, and duration of exercise. If the exercise is cardio, the distance traveled is tracked.
 
 # Description
 
-The user can:
-Add exercises to the most recent workout plan.
-Add new exercises to a new workout plan.
-View the combined weight of multiple exercises from the past seven workouts on the stats page.
-View the total duration of each workout from the past seven workouts on the stats page.
-
+This app uses a Mongoose schema and handles routes with Express.
